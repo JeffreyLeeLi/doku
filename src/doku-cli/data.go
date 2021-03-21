@@ -35,6 +35,12 @@ func (p *DoKuData) Init() {
 		return
 	}
 
+	for i := 0; i < p.rowCount(); i++ {
+		for j := 0; j < p.colCount(i); j++ {
+			p.set(i, j, 0)
+		}
+	}
+
 	p.Generate()
 }
 
