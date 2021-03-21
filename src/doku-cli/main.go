@@ -3,5 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("hello world")
+	d := NewDoKuData(4, 4)
+	fmt.Println(d)
 }
