@@ -22,6 +22,10 @@ func (p *DoKuData) at(i, j int) int {
 	return p.Data[i][j]
 }
 
+func (p *DoKuData) set(i, j, v int) {
+	p.Data[i][j] = v
+}
+
 func (p *DoKuData) rowCount() int {
 	return len(p.Data)
 }
