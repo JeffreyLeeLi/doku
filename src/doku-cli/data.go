@@ -210,17 +210,15 @@ func (p *DoKuData) String() string {
 
 	for i := 0; i < n; i++ {
 		if i > 0 {
-			s += "\n"
-
-			s += fmt.Sprintf("%s\n", strings.Repeat("----+", p.colCount()))
+			s += "|\n"
 		}
+
+		s += fmt.Sprintf("+%s\n", strings.Repeat("----+", p.colCount()))
 
 		l := p.colCount()
 
 		for j := 0; j < l; j++ {
-			if j > 0 {
-				s += "|"
-			}
+			s += "|"
 
 			if p.noneAt(i, j) {
 				s += strings.Repeat(" ", 4)
@@ -229,6 +227,9 @@ func (p *DoKuData) String() string {
 			}
 		}
 	}
+
+	s += "|\n"
+	s += fmt.Sprintf("+%s", strings.Repeat("----+", p.colCount()))
 
 	return s
 }
