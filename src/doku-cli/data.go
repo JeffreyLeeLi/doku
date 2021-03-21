@@ -18,10 +18,22 @@ func NewDoKuData(n, l int) *DoKuData {
 	}
 }
 
+func (p *DoKuData) rowCount() int {
+	return len(p.Data)
+}
+
+func (p *DoKuData) colCount(i int) int {
+	if p.rowCount() <= 0 {
+		return 0
+	}
+
+	return len(p.Data[i])
+}
+
 func (p *DoKuData) String() string {
 	s := ""
 
-	n := len(p.Data)
+	n := p.rowCount()
 
 	for i := 0; i < n; i++ {
 		if i > 0 {
@@ -29,7 +41,7 @@ func (p *DoKuData) String() string {
 		}
 
 		t := p.Data[i]
-		l := len(t)
+		l := p.colCount(i)
 
 		for j := 0; j < l; j++ {
 			if j > 0 {
