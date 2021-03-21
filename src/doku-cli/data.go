@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"strings"
 )
 
 type DoKuData struct {
@@ -127,7 +128,11 @@ func (p *DoKuData) String() string {
 				s += " "
 			}
 
-			s += fmt.Sprintf("%4d", p.at(i, j))
+			if p.noneAt(i, j) {
+				s += strings.Repeat(" ", 4)
+			} else {
+				s += fmt.Sprintf("%4d", p.at(i, j))
+			}
 		}
 	}
 
