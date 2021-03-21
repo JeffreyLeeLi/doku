@@ -4,9 +4,10 @@ import "fmt"
 
 type DoKuData struct {
 	Data [][]int
+	Base int
 }
 
-func NewDoKuData(n, l int) *DoKuData {
+func NewDoKuData(n, l, b int) *DoKuData {
 	data := make([][]int, n)
 
 	for i := 0; i < n; i++ {
@@ -15,6 +16,7 @@ func NewDoKuData(n, l int) *DoKuData {
 
 	return &DoKuData{
 		Data: data,
+		Base: b,
 	}
 }
 
