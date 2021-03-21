@@ -35,6 +35,10 @@ func (p *DoKuData) Init() {
 		return
 	}
 
+	p.Generate()
+}
+
+func (p *DoKuData) Generate() {
 	i, j := p.randPos()
 
 	for {
