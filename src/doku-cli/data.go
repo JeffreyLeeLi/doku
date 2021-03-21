@@ -211,6 +211,8 @@ func (p *DoKuData) String() string {
 	for i := 0; i < n; i++ {
 		if i > 0 {
 			s += "\n"
+
+			s += fmt.Sprintf("%s\n", strings.Repeat("----+", p.colCount()))
 		}
 
 		l := p.colCount()
