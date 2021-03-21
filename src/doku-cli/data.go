@@ -23,9 +23,15 @@ func NewDoKuData(n, l, b int) *DoKuData {
 	}
 }
 
+func (p *DoKuData) randPos() (row, col int) {
+	row = rand.Intn(p.rowCount())
+	col = rand.Intn(p.colCount(0))
+
+	return
+}
+
 func (p *DoKuData) Init() {
-	i := rand.Intn(p.rowCount())
-	j := rand.Intn(p.colCount(0))
+	i, j := p.randPos()
 
 	p.set(i, j, p.Base)
 }
