@@ -209,11 +209,8 @@ func (p *DoKuData) String() string {
 	n := p.rowCount()
 
 	for i := 0; i < n; i++ {
-		if i > 0 {
-			s += "|\n"
-		}
-
-		s += fmt.Sprintf("+%s\n", strings.Repeat("----+", p.colCount()))
+		s += fmt.Sprintf("+%s", strings.Repeat("----+", p.colCount()))
+		s += "\n"
 
 		l := p.colCount()
 
@@ -226,9 +223,11 @@ func (p *DoKuData) String() string {
 				s += fmt.Sprintf("%4d", p.at(i, j))
 			}
 		}
+
+		s += "|"
+		s += "\n"
 	}
 
-	s += "|\n"
 	s += fmt.Sprintf("+%s", strings.Repeat("----+", p.colCount()))
 
 	return s
