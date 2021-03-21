@@ -125,7 +125,7 @@ func (p *DoKuData) String() string {
 
 		for j := 0; j < l; j++ {
 			if j > 0 {
-				s += " "
+				s += "|"
 			}
 
 			if p.noneAt(i, j) {
