@@ -10,6 +10,8 @@ func main() {
 
 	cmd := `h`
 	for {
+		prevCmd := cmd
+
 		fmt.Printf(`[%s] `, cmd)
 
 		fmt.Scanln(&cmd)
@@ -32,6 +34,7 @@ func main() {
 		default:
 			{
 				fmt.Println("Invalid Command:", cmd)
+				cmd = prevCmd
 			}
 		}
 	}
