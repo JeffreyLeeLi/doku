@@ -41,10 +41,10 @@ func (p *DoKuData) Init() {
 		}
 	}
 
-	p.Generate()
+	p.generate()
 }
 
-func (p *DoKuData) Generate() {
+func (p *DoKuData) generate() {
 	i, j := p.randPos()
 
 	for {
