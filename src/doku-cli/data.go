@@ -37,7 +37,19 @@ func (p *DoKuData) Init() {
 
 	i, j := p.randPos()
 
+	for {
+		if p.noneAt(i, j) {
+			break
+		}
+
+		i, j = p.randPos()
+	}
+
 	p.set(i, j, p.Base)
+}
+
+func (p *DoKuData) noneAt(i, j int) bool {
+	return (p.at(i, j) == 0)
 }
 
 func (p *DoKuData) at(i, j int) int {
