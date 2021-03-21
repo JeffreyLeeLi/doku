@@ -26,7 +26,7 @@ func NewDoKuData(n, l, b int) *DoKuData {
 
 func (p *DoKuData) randPos() (row, col int) {
 	row = rand.Intn(p.rowCount())
-	col = rand.Intn(p.colCount(0))
+	col = rand.Intn(p.colCount())
 
 	return
 }
@@ -37,7 +37,7 @@ func (p *DoKuData) Init() {
 	}
 
 	for i := 0; i < p.rowCount(); i++ {
-		for j := 0; j < p.colCount(i); j++ {
+		for j := 0; j < p.colCount(); j++ {
 			p.set(i, j, 0)
 		}
 	}
@@ -87,12 +87,12 @@ func (p *DoKuData) rowCount() int {
 	return len(p.Data)
 }
 
-func (p *DoKuData) colCount(i int) int {
+func (p *DoKuData) colCount() int {
 	if p.rowCount() <= 0 {
 		return 0
 	}
 
-	return len(p.Data[i])
+	return len(p.Data[0])
 }
 
 func (p *DoKuData) hasEmptyRowOrCol() bool {
@@ -103,7 +103,7 @@ func (p *DoKuData) hasEmptyRowOrCol() bool {
 	}
 
 	for i := 0; i < n; i++ {
-		if p.colCount(0) <= 0 {
+		if p.colCount() <= 0 {
 			return true
 		}
 	}
@@ -121,7 +121,7 @@ func (p *DoKuData) String() string {
 			s += "\n"
 		}
 
-		l := p.colCount(i)
+		l := p.colCount()
 
 		for j := 0; j < l; j++ {
 			if j > 0 {
