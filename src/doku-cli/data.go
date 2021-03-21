@@ -24,6 +24,10 @@ func NewDoKuData(n, l, b int) *DoKuData {
 }
 
 func (p *DoKuData) randPos() (row, col int) {
+	if p.rowCount <= 0 {
+		return
+	}
+
 	row = rand.Intn(p.rowCount())
 	col = rand.Intn(p.colCount(0))
 
