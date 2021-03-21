@@ -18,6 +18,10 @@ func NewDoKuData(n, l int) *DoKuData {
 	}
 }
 
+func (p *DoKuData) at(i, j int) int {
+	return p.Data[i][j]
+}
+
 func (p *DoKuData) rowCount() int {
 	return len(p.Data)
 }
@@ -40,7 +44,6 @@ func (p *DoKuData) String() string {
 			s += "\n"
 		}
 
-		t := p.Data[i]
 		l := p.colCount(i)
 
 		for j := 0; j < l; j++ {
@@ -48,7 +51,7 @@ func (p *DoKuData) String() string {
 				s += " "
 			}
 
-			s += fmt.Sprint(t[j])
+			s += fmt.Sprint(p.at(i, j))
 		}
 	}
 
