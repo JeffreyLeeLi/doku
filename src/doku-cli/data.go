@@ -24,7 +24,7 @@ func NewDoKuData(n, l, b int) *DoKuData {
 }
 
 func (p *DoKuData) randPos() (row, col int) {
-	if p.rowCount <= 0 {
+	if p.isEmpty() {
 		return
 	}
 
@@ -53,11 +53,15 @@ func (p *DoKuData) rowCount() int {
 }
 
 func (p *DoKuData) colCount(i int) int {
-	if p.rowCount() <= 0 {
+	if p.isEmpty() {
 		return 0
 	}
 
 	return len(p.Data[i])
+}
+
+func (p *DoKuData) isEmpty() bool {
+	return p.rowCount() <= 0
 }
 
 func (p *DoKuData) String() string {
