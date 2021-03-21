@@ -58,6 +58,18 @@ func (p *DoKuData) generate() {
 	p.set(i, j, p.Base)
 }
 
+func (p *DoKuData) Up() {
+}
+
+func (p *DoKuData) Down() {
+}
+
+func (p *DoKuData) Left() {
+}
+
+func (p *DoKuData) Right() {
+}
+
 func (p *DoKuData) noneAt(i, j int) bool {
 	return (p.at(i, j) == 0)
 }

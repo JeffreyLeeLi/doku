@@ -22,6 +22,26 @@ func main() {
 				d.Init()
 				fmt.Println(d)
 			}
+		case `w`, `up`:
+			{
+				d.Up()
+				fmt.Println(d)
+			}
+		case `s`, `down`:
+			{
+				d.Down()
+				fmt.Println(d)
+			}
+		case `a`, `left`:
+			{
+				d.Left()
+				fmt.Println(d)
+			}
+		case `d`, `right`:
+			{
+				d.Right()
+				fmt.Println(d)
+			}
 		case `h`, `help`:
 			{
 				displayKeymap()
