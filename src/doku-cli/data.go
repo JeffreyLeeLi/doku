@@ -127,7 +127,7 @@ func (p *DoKuData) String() string {
 				s += " "
 			}
 
-			s += fmt.Sprint(p.at(i, j))
+			s += fmt.Sprintf("%4d", p.at(i, j))
 		}
 	}
 
