@@ -62,8 +62,8 @@ func (p *DoKuData) generate() {
 func (p *DoKuData) Up() {
 	swapped := false
 
-	for i := 0; i < p.rowCount(); i++ {
-		for j := 0; j < p.colCount(); j++ {
+	for j := 0; j < p.colCount(); j++ {
+		for i := 0; i < p.rowCount(); i++ {
 			if p.noneAt(i, j) {
 				continue
 			}
