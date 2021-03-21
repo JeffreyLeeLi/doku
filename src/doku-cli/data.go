@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
 type DoKuData struct {
 	Data [][]int
@@ -18,6 +21,13 @@ func NewDoKuData(n, l, b int) *DoKuData {
 		Data: data,
 		Base: b,
 	}
+}
+
+func (p *DoKuData) Init() {
+	i := rand.Intn(p.rowCount())
+	j := rand.Intn(p.colCount(0))
+
+	p.set(i, j, p.Base)
 }
 
 func (p *DoKuData) at(i, j int) int {
