@@ -107,6 +107,50 @@ func (p *DoKuData) Up() {
 }
 
 func (p *DoKuData) Down() {
+	swapped := false
+
+	for j := 0; j < p.colCount(); j++ {
+		for i := p.rowCount() - 1; i >= 0; i-- {
+			if p.noneAt(i, j) {
+				continue
+			}
+
+			for k := i; k < p.rowCount()-1; k++ {
+				if p.noneAt(k+1, j) {
+					p.swap(k, j, k+1, j)
+					swapped = true
+				}
+			}
+		}
+	}
+
+	combined := false
+
+	for j := 0; j < p.colCount(); j++ {
+		for i := p.rowCount() - 1; i > 0; i-- {
+			if p.noneAt(i, j) || p.noneAt(i-1, j) {
+				continue
+			}
+
+			one := p.at(i, j)
+			other := p.at(i-1, j)
+
+			if one == other {
+				p.set(i, j, one+other)
+				p.set(i-1, j, 0)
+
+				for k := i - 1; k > 1; k-- {
+					p.swap(k, j, k-1, j)
+				}
+
+				combined = true
+			}
+		}
+	}
+
+	if swapped || combined {
+		p.generate()
+	}
 }
 
 func (p *DoKuData) Left() {
