@@ -103,6 +103,8 @@ func (p *DoKuData) Up() {
 
 	if swapped || combined {
 		p.generate()
+	} else {
+		fmt.Println("Nothing Changed")
 	}
 }
 
@@ -150,6 +152,8 @@ func (p *DoKuData) Down() {
 
 	if swapped || combined {
 		p.generate()
+	} else {
+		fmt.Println("Nothing Changed")
 	}
 }
 
