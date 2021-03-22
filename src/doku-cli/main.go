@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	d := NewDoKuData(4, 5, 2)
+	d := NewDoKuData(4, 4, 2)
 
 	cmd := `h`
 	for {
