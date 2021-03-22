@@ -141,7 +141,7 @@ func (p *DoKuData) Down() {
 				p.set(i, j, one+other)
 				p.set(i-1, j, 0)
 
-				for k := i - 1; k > 1; k-- {
+				for k := i - 1; k > 0; k-- {
 					p.swap(k, j, k-1, j)
 				}
 
@@ -239,7 +239,7 @@ func (p *DoKuData) Right() {
 				p.set(i, j, one+other)
 				p.set(i, j-1, 0)
 
-				for l := j - 1; l > 1; l-- {
+				for l := j - 1; l > 0; l-- {
 					p.swap(i, l, i, l-1)
 				}
 
