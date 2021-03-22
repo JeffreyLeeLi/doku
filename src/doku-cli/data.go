@@ -158,9 +158,101 @@ func (p *DoKuData) Down() {
 }
 
 func (p *DoKuData) Left() {
+	swapped := false
+
+	for i := 0; i < p.rowCount(); i++ {
+		for j := 0; j < p.colCount(); j++ {
+			if p.noneAt(i, j) {
+				continue
+			}
+
+			for l := j; l > 0; l-- {
+				if p.noneAt(i, l-1) {
+					p.swap(i, l, i, l-1)
+					swapped = true
+				}
+			}
+		}
+	}
+
+	combined := false
+
+	for i := 0; i < p.rowCount(); i++ {
+		for j := 0; j < p.colCount()-1; j++ {
+			if p.noneAt(i, j) || p.noneAt(i, j+1) {
+				continue
+			}
+
+			one := p.at(i, j)
+			other := p.at(i, j+1)
+
+			if one == other {
+				p.set(i, j, one+other)
+				p.set(i, j+1, 0)
+
+				for l := j + 1; l < p.colCount()-1; l++ {
+					p.swap(i, l, i, l+1)
+				}
+
+				combined = true
+			}
+		}
+	}
+
+	if swapped || combined {
+		p.generate()
+	} else {
+		fmt.Println("Nothing Changed")
+	}
 }
 
 func (p *DoKuData) Right() {
+	swapped := false
+
+	for i := 0; i < p.rowCount(); i++ {
+		for j := p.colCount() - 1; j >= 0; j-- {
+			if p.noneAt(i, j) {
+				continue
+			}
+
+			for l := j; l < p.colCount()-1; l++ {
+				if p.noneAt(i, l+1) {
+					p.swap(i, l, i, l+1)
+					swapped = true
+				}
+			}
+		}
+	}
+
+	combined := false
+
+	for i := 0; i < p.rowCount(); i++ {
+		for j := p.colCount() - 1; j > 0; j-- {
+			if p.noneAt(i, j) || p.noneAt(i, j-1) {
+				continue
+			}
+
+			one := p.at(i, j)
+			other := p.at(i, j-1)
+
+			if one == other {
+				p.set(i, j, one+other)
+				p.set(i, j-1, 0)
+
+				for l := j - 1; l > 1; l-- {
+					p.swap(i, l, i, l-1)
+				}
+
+				combined = true
+			}
+		}
+	}
+
+	if swapped || combined {
+		p.generate()
+	} else {
+		fmt.Println("Nothing Changed")
+	}
 }
 
 func (p *DoKuData) swap(i, j, k, l int) {
