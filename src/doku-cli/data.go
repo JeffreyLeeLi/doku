@@ -316,7 +316,13 @@ func (p *DoKuData) String() string {
 			if p.noneAt(i, j) {
 				s += strings.Repeat(" ", 4)
 			} else {
-				s += fmt.Sprintf("%4d", p.at(i, j))
+				t := p.at(i, j)
+
+				if v, ok := ValueMap[t]; ok {
+					s += fmt.Sprintf("%4v", v)
+				} else {
+					s += fmt.Sprintf("%4d", t)
+				}
 			}
 		}
 
