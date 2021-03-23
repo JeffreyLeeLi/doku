@@ -319,7 +319,7 @@ func (p *DoKuData) String() string {
 				t := p.at(i, j)
 
 				if v, ok := ValueMap[t]; ok {
-					s += fmt.Sprintf("%4v", v)
+					s += fmt.Sprintf("%v", v)
 				} else {
 					s += fmt.Sprintf("%4d", t)
 				}
