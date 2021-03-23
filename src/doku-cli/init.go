@@ -44,4 +44,10 @@ func init() {
 	ValueMap[1<<2] = "赛文"
 	ValueMap[1<<3] = "杰克"
 	ValueMap[1<<4] = "艾斯"
+
+	ValueMap[1<<1] = "铁剑"
+	ValueMap[1<<2] = "陨星"
+	ValueMap[1<<3] = "战斧"
+	ValueMap[1<<4] = "星锤"
+	ValueMap[1<<5] = "破军"
 }
