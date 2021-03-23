@@ -39,4 +39,9 @@ func init() {
 	ValueMap[1<<24] = "   X"
 	ValueMap[1<<25] = "   Y"
 	ValueMap[1<<26] = "   Z"
+
+	ValueMap[1<<1] = "初代"
+	ValueMap[1<<2] = "赛文"
+	ValueMap[1<<3] = "杰克"
+	ValueMap[1<<4] = "艾斯"
 }
