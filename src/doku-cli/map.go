@@ -118,3 +118,15 @@ func populateMapOfUniverse() {
 
 	showLevelDetails()
 }
+
+func populateMapOfHuman() {
+	emptyValueMap()
+
+	ValueMap[1<<1] = "细胞"
+	ValueMap[1<<2] = "组织"
+	ValueMap[1<<3] = "器官"
+	ValueMap[1<<4] = "系统"
+	ValueMap[1<<5] = "人体"
+
+	showLevelDetails()
+}
