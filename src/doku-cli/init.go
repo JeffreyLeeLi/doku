@@ -50,4 +50,16 @@ func init() {
 	ValueMap[1<<3] = "战斧"
 	ValueMap[1<<4] = "星锤"
 	ValueMap[1<<5] = "破军"
+
+	ValueMap[1<<1] = " 兵 "
+	ValueMap[1<<2] = " 班 "
+	ValueMap[1<<3] = " 排 "
+	ValueMap[1<<4] = " 连 "
+	ValueMap[1<<5] = " 营 "
+	ValueMap[1<<6] = " 团 "
+	ValueMap[1<<7] = " 旅 "
+	ValueMap[1<<8] = " 师 "
+	ValueMap[1<<9] = " 军 "
+	ValueMap[1<<10] = "集团"
+	ValueMap[1<<11] = "统帅"
 }
