@@ -24,26 +24,32 @@ func main() {
 		case `1`:
 			{
 				populateMapOfAlphabet()
+				showLevelDetails()
 			}
 		case `2`:
 			{
 				populateMapOfUltraman()
+				showLevelDetails()
 			}
 		case `3`:
 			{
 				populateMapOfGloryOfKings()
+				showLevelDetails()
 			}
 		case `4`:
 			{
 				populateMapOfMilitary()
+				showLevelDetails()
 			}
 		case `5`:
 			{
 				populateMapOfUniverse()
+				showLevelDetails()
 			}
 		case `6`:
 			{
 				populateMapOfHuman()
+				showLevelDetails()
 			}
 		case `n`, `new`:
 			{
