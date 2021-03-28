@@ -118,3 +118,17 @@ func populateMapOfHuman() {
 	ValueMap[1<<4] = "系统"
 	ValueMap[1<<5] = "人体"
 }
+
+func populateMapOfWorld() {
+	emptyValueMap()
+
+	ValueMap[1<<1] = " 人 "
+	ValueMap[1<<2] = " 家 "
+	ValueMap[1<<3] = " 村 "
+	ValueMap[1<<4] = " 乡 "
+	ValueMap[1<<5] = " 县 "
+	ValueMap[1<<6] = " 市 "
+	ValueMap[1<<7] = " 省 "
+	ValueMap[1<<8] = " 国 "
+	ValueMap[1<<9] = "世界"
+}

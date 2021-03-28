@@ -52,6 +52,11 @@ func main() {
 				populateMapOfHuman()
 				showLevelDetails()
 			}
+		case `7`:
+			{
+				populateMapOfWorld()
+				showLevelDetails()
+			}
 		case `n`, `new`:
 			{
 				d.Init()
@@ -96,5 +101,5 @@ func main() {
 }
 
 func displayKeymap() {
-	fmt.Println(`[N]ew | [W]: Up [S]: Down [A]: Left [D]: Right | [1]: Alphabet [2] Ultraman [3] Glory of Kings [4] Military [5] Universe [6] Human ... [0]: Number | [H]elp [Q]uit`)
+	fmt.Println(`[N]ew | [W]: Up [S]: Down [A]: Left [D]: Right | [1]: Alphabet [2] Ultraman [3] Glory of Kings [4] Military [5] Universe [6] Human 【7】 World ... [0]: Number | [H]elp [Q]uit`)
 }
