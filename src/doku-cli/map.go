@@ -30,7 +30,7 @@ func populateMapOfAlphabet() {
 	ValueMap[1<<26] = "   Z"
 }
 
-func populateMapOfUntraman() {
+func populateMapOfUltraman() {
 	ValueMap[1<<1] = "初代"
 	ValueMap[1<<2] = "赛文"
 	ValueMap[1<<3] = "杰克"
