@@ -17,6 +17,26 @@ func main() {
 		fmt.Scanln(&cmd)
 
 		switch strings.ToLower(cmd) {
+		case `0`:
+			{
+				emptyValueMap()
+			}
+		case `1`:
+			{
+				populateMapOfAlphabet()
+			}
+		case `2`:
+			{
+				populateMapOfUltraman()
+			}
+		case `3`:
+			{
+				populateMapOfGloryOfKings()
+			}
+		case `4`:
+			{
+				populateMapOfMilitary()
+			}
 		case `n`, `new`:
 			{
 				d.Init()
@@ -61,5 +81,5 @@ func main() {
 }
 
 func displayKeymap() {
-	fmt.Println(`[N]ew | [W]: Up [S]: Down [A]: Left [D]: Right | [H]elp [Q]uit`)
+	fmt.Println(`[N]ew | [W]: Up [S]: Down [A]: Left [D]: Right | [0]: Number [1]: Alphabet [2] Ultraman [3] Glory of Kings [4] Military | [H]elp [Q]uit`)
 }
