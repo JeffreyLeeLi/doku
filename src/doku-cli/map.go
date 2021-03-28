@@ -1,6 +1,12 @@
 package main
 
+func emptyValueMap() {
+	ValueMap = map[int]string{}
+}
+
 func populateMapOfAlphabet() {
+	emptyValueMap()
+
 	ValueMap[1<<1] = "   A"
 	ValueMap[1<<2] = "   B"
 	ValueMap[1<<3] = "   C"
@@ -31,6 +37,8 @@ func populateMapOfAlphabet() {
 }
 
 func populateMapOfUltraman() {
+	emptyValueMap()
+
 	ValueMap[1<<1] = "初代"
 	ValueMap[1<<2] = "赛文"
 	ValueMap[1<<3] = "杰克"
@@ -38,6 +46,8 @@ func populateMapOfUltraman() {
 }
 
 func populateMapOfGloryOfKings() {
+	emptyValueMap()
+
 	ValueMap[1<<1] = "铁剑"
 	ValueMap[1<<2] = "陨星"
 	ValueMap[1<<3] = "战斧"
@@ -46,6 +56,8 @@ func populateMapOfGloryOfKings() {
 }
 
 func populateMapOfMilitary() {
+	emptyValueMap()
+
 	ValueMap[1<<1] = " 兵 "
 	ValueMap[1<<2] = " 班 "
 	ValueMap[1<<3] = " 排 "
