@@ -101,3 +101,20 @@ func populateMapOfMilitary() {
 
 	showLevelDetails()
 }
+
+func populateMapOfUniverse() {
+	emptyValueMap()
+
+	ValueMap[1<<1] = "核子"
+	ValueMap[1<<2] = "原子"
+	ValueMap[1<<3] = "分子"
+	ValueMap[1<<4] = "石子"
+	ValueMap[1<<5] = "流星"
+	ValueMap[1<<6] = "卫星"
+	ValueMap[1<<7] = "行星"
+	ValueMap[1<<8] = "恒星"
+	ValueMap[1<<9] = "星系"
+	ValueMap[1<<10] = "黑洞"
+
+	showLevelDetails()
+}
