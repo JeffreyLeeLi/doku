@@ -61,5 +61,5 @@ func main() {
 }
 
 func displayKeymap() {
-	fmt.Println(`[N]ew | W: up S: down A: left D: right | [H]elp [Q]uit`)
+	fmt.Println(`[N]ew | [W]: Up [S]: Down [A]: Left [D]: Right | [H]elp [Q]uit`)
 }
