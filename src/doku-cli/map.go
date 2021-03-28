@@ -1,5 +1,28 @@
 package main
 
+import (
+	"fmt"
+	"strings"
+)
+
+func showLevelDetails() {
+	n := len(ValueMap)
+
+	fmt.Println(strings.Repeat("+----+  ", n))
+
+	for i := 1; i <= n; i++ {
+		if i > 1 {
+			fmt.Print("->")
+		}
+
+		fmt.Printf("|%s|", ValueMap[1<<uint(i)])
+	}
+
+	fmt.Println()
+
+	fmt.Println(strings.Repeat("+----+  ", n))
+}
+
 func emptyValueMap() {
 	ValueMap = map[int]string{}
 }
@@ -34,6 +57,8 @@ func populateMapOfAlphabet() {
 	ValueMap[1<<24] = "   X"
 	ValueMap[1<<25] = "   Y"
 	ValueMap[1<<26] = "   Z"
+
+	showLevelDetails()
 }
 
 func populateMapOfUltraman() {
@@ -43,6 +68,8 @@ func populateMapOfUltraman() {
 	ValueMap[1<<2] = "赛文"
 	ValueMap[1<<3] = "杰克"
 	ValueMap[1<<4] = "艾斯"
+
+	showLevelDetails()
 }
 
 func populateMapOfGloryOfKings() {
@@ -53,6 +80,8 @@ func populateMapOfGloryOfKings() {
 	ValueMap[1<<3] = "战斧"
 	ValueMap[1<<4] = "星锤"
 	ValueMap[1<<5] = "破军"
+
+	showLevelDetails()
 }
 
 func populateMapOfMilitary() {
@@ -69,4 +98,6 @@ func populateMapOfMilitary() {
 	ValueMap[1<<9] = " 军 "
 	ValueMap[1<<10] = "集团"
 	ValueMap[1<<11] = "统帅"
+
+	showLevelDetails()
 }
